@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+    frontend:
+        build: frontend/
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./frontend:/app
+        working_dir: /app
+        networks:
+          - prueba
+    backend:
+        image: tomcat:latest
+        volumes:
+          - ./backend/build/libs:/usr/local/tomcat/webapps
+        networks:
+          - prueba
+    mysql:
+        image: mysql:latest
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: admin
+        networks:
+          - prueba
+networks:
+  prueba:
+    driver: bridge
