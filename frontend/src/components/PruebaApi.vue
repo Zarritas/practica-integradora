@@ -20,7 +20,7 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch('http://172.19.0.4:8080/backend-1/RestApi/departamentos/listado');
+      const response = await fetch('http://172.19.0.3:8080/backend-1/RestApi/departamentos/listado');
       if (!response.ok) {
         throw new Error('Error al obtener los datos de la API');
       }
