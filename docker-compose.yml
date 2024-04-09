@@ -1,28 +1,40 @@
 version: "3.8"
 services:
     frontend:
+        container_name: front
         build: frontend/
         ports:
-            - "8080:8080"
+            - "8081:8080"
         volumes:
             - ./frontend:/app
         working_dir: /app
         networks:
-          - prueba
+            prueba:
+              ipv4_address: 172.19.0.4
+        hostname: front
     backend:
+    	container_name: back
         image: tomcat:latest
         volumes:
           - ./backend/build/libs:/usr/local/tomcat/webapps
         networks:
-          - prueba
+          prueba:
+            ipv4_address: 172.19.0.2
+        hostname: back
     mysql:
+        container_name: mysql
         image: mysql:latest
         ports:
             - "3306:3306"
         environment:
             MYSQL_ROOT_PASSWORD: admin
         networks:
-          - prueba
+          prueba:
+            ipv4_address: 172.19.0.3
+        hostname: db
 networks:
   prueba:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16

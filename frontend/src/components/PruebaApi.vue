@@ -2,7 +2,7 @@
   <div>
     <h1>Departments</h1>
     <ul v-if="!loading">
-      <li v-for="department in departments" :key="department.id">{{ department.name }}</li>
+      <li v-for="department in departments" :key="department.id">{{ department.nombre }}</li>
     </ul>
     <div v-else>
       <p>Cargando...</p>
@@ -20,7 +20,7 @@ export default {
   },
   async created() {
     try {
-      const response = await fetch('http://172.19.0.3:8080/backend-1/RestApi/departamentos/listado');
+      const response = await fetch('http://172.19.0.2:8080/backend-1/RestApi/departamentos/listado');
       if (!response.ok) {
         throw new Error('Error al obtener los datos de la API');
       }
