@@ -1,4 +1,5 @@
-# Pruebas de práctica integradora de proyecto de clase
+# Práctica integradora de proyecto de clase
+Se trata de un proyecto en el que se unificarán una base de datos en [MYSQL](https://www.mysql.com/), una API REST realizada con [Spring Boot](https://spring.io/) y un servidor web en [Node.js](https://nodejs.org/en) con la aplicación en [Vue.js](https://vuejs.org/)
 > [!IMPORTANT]
 > - Se requiere tener instalado ***docker, docker-compose y npm***
 > 
@@ -52,7 +53,7 @@
 
 ## Pasos a seguir
 1. Clonamos el repositorio
-3. Dentro de la carpeta de [frontend](frontend/) abrimos un terminal y ejecutamos el comando npm install
-4. En la carpeta [raiz](./) abrimos un terminal y ejecutamos docker-compose up --build
-5. Una vez todos los contenedores estén iniciados entramos en [backend](backend/) y ejecutamos ./gradlew bootwar
-6. Listo al acceder a 172.19.0.4 ya deberiamos poder llegar a los datos
+2. Dentro de la carpeta de [frontend](frontend/) abrimos un terminal y ejecutamos el comando npm install
+3. En la carpeta [raiz](./) abrimos un terminal y ejecutamos docker-compose up --build
+4. Una vez todos los contenedores estén iniciados entramos en [backend](backend/) y ejecutamos ./gradlew bootwar
+5. Listo, al acceder a 172.19.0.4 ya deberiamos poder llegar a los datos

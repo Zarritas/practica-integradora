@@ -3,8 +3,9 @@ services:
     frontend:
         container_name: front
         build: frontend/
+        image: zarritas/frontend:latest
         ports:
-            - "8081:8080"
+            - "8080:8080"
         volumes:
             - ./frontend:/app
         working_dir: /app
@@ -13,8 +14,9 @@ services:
               ipv4_address: 172.19.0.4
         hostname: front
     backend:
-    	container_name: back
-        image: tomcat:latest
+        container_name: back
+        build: backend/
+        image: zarritas/tomcat:latest
         volumes:
           - ./backend/build/libs:/usr/local/tomcat/webapps
         networks:
@@ -22,16 +24,15 @@ services:
             ipv4_address: 172.19.0.2
         hostname: back
     mysql:
-        container_name: mysql
-        image: mysql:latest
+        container_name: database
+        build: mysql/
+        image: zarritas/mysql:latest
         ports:
             - "3306:3306"
-        environment:
-            MYSQL_ROOT_PASSWORD: admin
         networks:
           prueba:
             ipv4_address: 172.19.0.3
-        hostname: db
+        hostname: database
 networks:
   prueba:
     driver: bridge
