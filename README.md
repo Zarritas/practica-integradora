@@ -15,6 +15,8 @@ Se trata de un proyecto en el que se unificarán una base de datos en [MYSQL](ht
 > Red: prueba
 > 
 > Ipv4: 172.19.0.3
+>
+> Nombre de la imagen: zarritas/mysql:latest
 > 
 > Imagen: [Dockerfile](mysql/Dockerfile)
 >  - Utiliza la imagen mysql:latest
@@ -30,8 +32,12 @@ Se trata de un proyecto en el que se unificarán una base de datos en [MYSQL](ht
 > Red: prueba
 > 
 > Ipv4: 172.19.0.2
+>
+> Nombre de la imagen: zarritas/tomcat:latest
 > 
-> Imagen: tomcat:latest
+> Imagen: [Dockerfile](backend/Dockerfile)
+>  - Utiliza la imagen node:latest
+>  - Ejecuta e comando para dejar el servicio en funcionamiento
 > 
 > Volumen: ./backend/build/libs:/usr/local/tomcat/webapps
 
@@ -39,6 +45,8 @@ Se trata de un proyecto en el que se unificarán una base de datos en [MYSQL](ht
 > Red: prueba
 > 
 > Ipv4: 172.19.0.4
+>
+> Nombre de la imagen: zarritas/node:latest
 > 
 > Imagen: [Dockerfile](frontend/Dockerfile)
 >  - Utiliza la imagen node:latest
@@ -47,7 +55,7 @@ Se trata de un proyecto en el que se unificarán una base de datos en [MYSQL](ht
 >  - copia los archivos de package*.json al directorio de trabajo
 >  - instala las dependencias
 >  - Expone el puerto 3306
->  - Ejecuta e comando para dejar el servidor en funcionamiento
+>  - Ejecuta e comando para dejar el servicio en funcionamiento
 > 
 > Volumen: (./frontend):/app
 
