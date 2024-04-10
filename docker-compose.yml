@@ -3,7 +3,7 @@ services:
     frontend:
         container_name: front
         build: frontend/
-        image: zarritas/frontend:latest
+        image: zarritas/node:latest
         ports:
             - "8080:8080"
         volumes:
