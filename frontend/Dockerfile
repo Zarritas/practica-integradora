@@ -1,5 +1,6 @@
 # Usa una imagen base que incluya Node.js y npm
 FROM node:latest
+LABEL authors="zarritas"
 
 RUN npm install -g http-server
 
